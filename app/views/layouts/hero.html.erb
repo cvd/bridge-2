@@ -39,12 +39,19 @@
       <div class="fill">
         <div class="container">
           <a class="brand" href="#">The BRIDGE Project DC</a>
-          <ul class="nav">
+          <ul class="kav">
             <li class="active"><a href="#">Home</a></li>
+            <li><%= link_to "Organizations", organizations_path %></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
-          <% unless current_user.present? %>
+          <% if current_user.present? %>
+            <div class="pull-right">
+              <ul class="nav">
+                <li><%= link_to "Logged in as #{current_user.email}", edit_user_registration_path %></li>
+              </ul>
+            </div>
+          <% else %>k
             <%= form_for(User.new, :url => new_user_session_path, :html => {:class => "pull-right"} ) do |f| %>
               <%= f.text_field :email, :class => "input-small", :placeholder => "Username" %>
               <%= f.password_field :password, :class => "input-small", :placeholder => "Password" %>

@@ -1,5 +1,4 @@
 class OrganizationsController < ApplicationController
-  layout "container"
 
   # GET /organizations
   # GET /organizations.json
