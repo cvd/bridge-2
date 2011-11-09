@@ -4,32 +4,25 @@
   </div>
 <% end %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Address</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Zip</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<hr>
 
-<% @organizations.each do |organization| %>
-  <tr>
-    <td><%= organization.name %></td>
-    <td><%= organization.address %></td>
-    <td><%= organization.city %></td>
-    <td><%= organization.state %></td>
-    <td><%= organization.zip %></td>
-    <td><%= link_to 'Show', organization %></td>
-    <td><%= link_to 'Edit', edit_organization_path(organization) %></td>
-    <td><%= link_to 'Destroy', organization, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
+<div class="row">
+  <ul class="unstyled">
+    <% @organizations.each do |org| %>
+      <li class="organization">
+        <div class="row span14">
+          <h3 class="span6"><%= link_to org.name, org %></h3>
+          <div class="span4 pull-right">
+            <span class="left label notice">Awesome</span>
+            <span class="left label notice">Shit!</span>
+            <span class="left label notice">Clothes</span>
+            <span class="left label notice">Food</span>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
 <br />
 
 <%= link_to 'New Organization', new_organization_path %>
