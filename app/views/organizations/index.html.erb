@@ -4,25 +4,46 @@
   </div>
 <% end %>
 
-<hr>
 
-<div class="row">
-  <ul class="unstyled">
-    <% @organizations.each do |org| %>
-      <li class="organization">
-        <div class="row span14">
-          <h3 class="span6"><%= link_to org.name, org %></h3>
-          <div class="span4 pull-right">
-            <span class="left label notice">Awesome</span>
-            <span class="left label notice">Shit!</span>
-            <span class="left label notice">Clothes</span>
-            <span class="left label notice">Food</span>
-          </div>
-        </div>
-      </li>
-    <% end %>
-  </ul>
+<div class="container-fluid">
+  <div class="sidebar">
+    <div class="well organizations">
+      <h5>Sidebar</h5>
+      <ul>
+        <% @organizations.each do |org| %>
+          <li>
+            <div class="row span6">
+              <h3 class="span4"><%= link_to org.name, org %></h3>
+              <%# <div class="span2 pull-right">%>
+              <%#   <span class="left label notice">Awesome</span>%>
+              <%#   <span class="left label notice">Shit!</span>%>
+              <%# </div>%>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="content">
+    <!-- Main hero unit for a primary marketing message or call to action -->
+    <div class="hero-unit">
+      <h1>Hello, world!</h1>
+      <p>Vestibulum id ligula porta felis euismod semper. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+      <p><a class="btn primary large">Learn more &raquo;</a></p>
+    </div>
+
+    <hr>
+
+    <br />
+
+    <%= link_to 'New Organization', new_organization_path %>
+
+
+    <footer>
+      <p>&copy; Company 2011</p>
+    </footer>
+  </div>
 </div>
-<br />
 
-<%= link_to 'New Organization', new_organization_path %>

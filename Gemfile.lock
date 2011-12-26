@@ -29,6 +29,9 @@ GEM
       activesupport (= 3.1.1)
     activesupport (3.1.1)
       multi_json (~> 1.0)
+    anjlab-bootstrap-rails (1.4.0.9)
+      railties (~> 3.0)
+      thor (~> 0.14)
     annotate (2.4.0)
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
@@ -55,8 +58,16 @@ GEM
     escape (0.0.4)
     execjs (1.2.9)
       multi_json (~> 1.0)
+    factory_girl (2.3.2)
+      activesupport
+    factory_girl_rails (1.4.0)
+      factory_girl (~> 2.3.0)
+      railties (>= 3.0.0)
     formtastic (2.0.2)
       rails (~> 3.0)
+    formtastic-bootstrap (1.1.2)
+      formtastic
+      rails (~> 3.1.0)
     fssm (0.2.7)
     geocoder (1.0.4)
     hike (1.2.1)
@@ -101,7 +112,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (~> 0.14.6)
-    rake (0.9.2)
+    rake (0.9.2.2)
     rdoc (3.11)
       json (~> 1.4)
     rsolr (0.12.1)
@@ -157,12 +168,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  anjlab-bootstrap-rails
   annotate
   coffee-rails (~> 3.1.0)
   compass
   decent_exposure
   devise
+  factory_girl_rails
   formtastic (~> 2.0.0)
+  formtastic-bootstrap
   geocoder
   interactive_editor
   jquery-rails

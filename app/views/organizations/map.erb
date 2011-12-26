@@ -1,0 +1,44 @@
+<div id="page">
+
+  <div id="search_bar">
+    <div id="form_holder">
+      <form action="#">
+        <label for="search_services">Search Services</label>
+        <input id="search_services" type="text" name="q" />
+        <button class="btn primary" type="submit" value="search" >Search</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="main_map">
+    <div id="panel" data-autoheight="true">
+      <ul class="orgs">
+        <% @organizations.each do |org| %>
+          <li>
+            <div class="title">
+              <%= link_to org, org %>
+            </div>
+            <div class="body">
+              <%= org.address %><br/>
+              <%= org.city %>, <%= org.state %> <%= org.zip %>
+            </div>
+            <div class="tags">
+              <ul>
+                <% org.tags.each do |tag| %>
+                  <li class="label notice"><%= tag %></li>
+                <% end %>
+              </ul>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+
+    </div>
+
+    <div id="map" data-autoheight="true">
+      <div id="map_canvas" data-lng="-77.036133" data-lat="38.876067" data-method="map">
+        HELLO I"M A MAP
+      </div>
+    </div>
+  </div>
+</div>

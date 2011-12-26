@@ -10,8 +10,10 @@ gem 'sunspot_rails', '~> 1.2.1'
 gem "devise"
 gem "decent_exposure"
 gem 'formtastic', '~> 2.0.0'
+gem 'formtastic-bootstrap'
 gem "will_paginate"
 gem 'geocoder'
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -29,6 +31,7 @@ group :development, :test do
   gem "rspec"
   gem "annotate"
   gem "rspec-rails"
+  gem "factory_girl_rails"
   # gem "sample_models"
   # gem "jasmine"
   # gem "jasmine-jquery"

@@ -1,54 +1,16 @@
-<%= form_for(@organization) do |f| %>
-  <fieldset>
-    <% if @organization.errors.any? %>
-      <div class="alert-message error" id="error_explanation">
-        <a class="close" href="#">x</a>
-        <span>
-          <%= pluralize(@organization.errors.count, "error") %> prohibited this organization from being saved:
-        </span>
+<%= semantic_form_for(@organization) do |f| %>
 
-        <ul>
-        <% @organization.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
+    <%= f.inputs do %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :city %>
+      <%= f.input :state %>
+      <%= f.input :zip %>
     <% end %>
 
-    <div class="clearfix">
-      <%= f.label :name %>
-      <div class="input">
-        <%= f.text_field :name %>
-      </div>
-    </div>
-    <div class="clearfix">
-      <%= f.label :address %>
-      <div class="input">
-        <%= f.text_field :address %>
-      </div>
-    </div>
-    <div class="clearfix">
-      <%= f.label :city %>
-      <div class="input">
-        <%= f.text_field :city %>
-      </div>
-    </div>
-    <div class="clearfix">
-      <%= f.label :state %>
-      <div class="input">
-        <%= f.text_field :state %>
-      </div>
-    </div>
-    <div class="clearfix">
-      <%= f.label :zip %>
-      <div class="input">
-        <%= f.text_field :zip %>
-      </div>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-      <span class="span1">&nbsp;</span>
-      <%= link_to 'Back', "javascript: history.back()" %>
-    </div>
-  </fieldset>
+    <%= f.buttons do %>
+      <%= f.commit_button %>
+      <span>or</span>
+      <%= link_to 'Cancel', "javascript: history.back()" %>
+    <% end %>
 <% end %>

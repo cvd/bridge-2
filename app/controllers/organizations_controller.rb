@@ -81,4 +81,9 @@ class OrganizationsController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def map
+    @organizations = Organization.all
+    render "map", :layout => "fluid"
+  end
 end

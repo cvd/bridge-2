@@ -7,9 +7,8 @@
     <meta name="author" content="">
 
     <link href='http://fonts.googleapis.com/css?family=Amaranth' rel='stylesheet' type='text/css'>
-    <%= stylesheet_link_tag 'bootstrap' %>
     <%= stylesheet_link_tag 'application' %>
-    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag :application %>
     <script type="text/javascript"
       src="http://maps.google.com/maps/api/js?sensor=false">
     </script>
@@ -83,40 +82,17 @@
 
   <body>
 
-    <div class="topbar">
-      <div class="fill">
-        <div class="container">
-          <a class="brand" href="#">Project name</a>
-          <ul class="nav">
-            <li class="active"><%= link_to "Home", root_path %></li>
-            <li><%= link_to "Organizations", organizations_path %> </li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-
-          <% if current_user.present? %>
-            <div class="pull-right">
-              <ul class="nav">
-                <li><%= link_to "Logged in as #{current_user.email}", edit_user_registration_path %></li>
-              </ul>
-            </div>
-          <% else %>k
-            <%= form_for(User.new, :url => new_user_session_path, :html => {:class => "pull-right"} ) do |f| %>
-              <%= f.text_field :email, :class => "input-small", :placeholder => "Username" %>
-              <%= f.password_field :password, :class => "input-small", :placeholder => "Password" %>
-              <button class="btn" type="submit">Sign in</button>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-    </div>
+    <%= render "layouts/nav" %>
 
     <div class="container">
       <% if flash[:notice].present? %>
-        <div class="alert notice"><%= flash[:notice] %></div>
+        <div class="alert-message notice"><%= flash[:notice] %></div>
       <% end %>
       <% if flash[:error].present? %>
-        <div class="error alert"><%= flash[:alert] %></div>
+        <div class="error alert-message"><%= flash[:alert] %></div>
+      <% end %>
+      <% if flash[:success].present? %>
+        <div class="alert-message success"><%= flash[:sucess] %></div>
       <% end %>
 
       <% if content_for :tag_line %>

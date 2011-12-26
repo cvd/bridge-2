@@ -1,0 +1,107 @@
+/* line 5, ../../app/assets/stylesheets/organizations.css.scss */
+.organizations ul {
+  list-style-type: none;
+}
+
+/* line 9, ../../app/assets/stylesheets/organizations.css.scss */
+#page {
+  position: relative;
+  width: 100%;
+}
+
+/* line 13, ../../app/assets/stylesheets/organizations.css.scss */
+#search_bar {
+  background-color: #F5F5F5;
+  height: 65px;
+}
+/* line 16, ../../app/assets/stylesheets/organizations.css.scss */
+#search_bar #form_holder {
+  padding-top: 15px;
+  background-color: #F5F5F5;
+}
+/* line 20, ../../app/assets/stylesheets/organizations.css.scss */
+#search_bar form {
+  background-color: #F5F5F5;
+  margin-bottom: 0;
+}
+/* line 23, ../../app/assets/stylesheets/organizations.css.scss */
+#search_bar form #search_services {
+  min-width: 400px;
+  max-width: 600px;
+  font-size: 150%;
+  color: #222;
+  height: 25px;
+}
+/* line 30, ../../app/assets/stylesheets/organizations.css.scss */
+#search_bar form label {
+  width: 270px;
+  text-align: left;
+  padding-left: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* line 40, ../../app/assets/stylesheets/organizations.css.scss */
+#main_map {
+  position: relative;
+}
+
+/* line 44, ../../app/assets/stylesheets/organizations.css.scss */
+#panel .orgs {
+  margin: 0;
+}
+
+/* line 48, ../../app/assets/stylesheets/organizations.css.scss */
+#panel .orgs > li {
+  border-bottom: 1px solid #E5E3DF;
+  list-style-type: none;
+}
+/* line 51, ../../app/assets/stylesheets/organizations.css.scss */
+#panel .orgs > li .title {
+  padding: 5px 5px 0 5px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+/* line 57, ../../app/assets/stylesheets/organizations.css.scss */
+#panel .orgs > li .body {
+  padding: 5px;
+}
+/* line 61, ../../app/assets/stylesheets/organizations.css.scss */
+#panel .orgs > li .tags ul {
+  margin-left: 5px;
+  padding-bottom: 5px;
+}
+/* line 65, ../../app/assets/stylesheets/organizations.css.scss */
+#panel .orgs > li .tags li {
+  display: inline;
+}
+
+/* line 73, ../../app/assets/stylesheets/organizations.css.scss */
+#panel {
+  overflow-y: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 300px;
+  height: 400px;
+}
+
+/* line 82, ../../app/assets/stylesheets/organizations.css.scss */
+#map {
+  position: relative;
+  left: 301px;
+  margin-right: 301px;
+  box-shadow: 0 0 10px #888888 inset;
+  height: 400px;
+  border: 1px solid rgba(102, 102, 102, 0.25);
+}
+
+/* line 91, ../../app/assets/stylesheets/organizations.css.scss */
+#map_canvas {
+  height: 100%;
+}
+
+/* line 95, ../../app/assets/stylesheets/organizations.css.scss */
+#show-org-map-holder {
+  height: 400px;
+}

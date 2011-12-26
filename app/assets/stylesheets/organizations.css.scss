@@ -1,3 +1,98 @@
 // Place all the styles related to the Organizations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.organizations ul {
+  list-style-type: none;
+}
+
+#page {
+  position: relative;
+  width: 100%;
+}
+#search_bar {
+  background-color: #F5F5F5;
+  height: 65px;
+  #form_holder {
+    padding-top: 15px;
+    background-color: #F5F5F5;
+  }
+  form {
+    background-color: #F5F5F5;
+    margin-bottom: 0;
+    #search_services {
+      min-width: 400px;
+      max-width: 600px;
+      font-size: 150%;
+      color: #222;
+      height: 25px;
+    }
+    label {
+      width: 270px;;
+      text-align: left;
+      padding-left: 30px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+}
+
+#main_map {
+  position: relative;
+}
+
+#panel .orgs {
+  margin: 0;
+}
+
+#panel .orgs > li {
+ border-bottom: 1px solid #E5E3DF;
+ list-style-type: none;
+ .title {
+    padding: 5px 5px 0 5px;
+    font-weight: bold;
+    font-size: 1.2em;
+ }
+
+ .body {
+   padding: 5px;
+ }
+
+ .tags ul {
+   margin-left: 5px;
+   padding-bottom: 5px;
+ }
+ .tags li {
+   display: inline;
+   
+ }
+}
+
+
+
+#panel {
+  overflow-y: auto;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 300px;
+  height: 400px;
+}
+
+#map {
+  position: relative;
+  left: 301px;
+  margin-right: 301px;
+  box-shadow: 0 0 10px #888888 inset;
+  height: 400px;
+  border: 1px solid rgba(102, 102, 102, 0.25);
+}
+
+#map_canvas {
+  height: 100%;
+}
+
+#show-org-map-holder {
+  height: 400px;
+}
+
