@@ -3,12 +3,17 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
- *= require bootstrap
  *= require formtastic-bootstrap
 */
 
 // @import "home";
+
+@import "twitter/bootstrap";
 @import "organizations";
+
+.clearfix:after {content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
+.clearfix {display:block;}
+
 
 .organization {
   border-bottom: 1px solid #333;
@@ -19,4 +24,9 @@
   height: 400px;
   border-radius: 5px;
   border: 4px solid #4282B1;
+}
+
+.middle_content {
+  width: 100%;
+  margin: 0 10;
 }

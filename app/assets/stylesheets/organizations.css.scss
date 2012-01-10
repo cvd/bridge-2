@@ -48,6 +48,7 @@
 #panel .orgs > li {
  border-bottom: 1px solid #E5E3DF;
  list-style-type: none;
+
  .title {
     padding: 5px 5px 0 5px;
     font-weight: bold;
@@ -62,9 +63,9 @@
    margin-left: 5px;
    padding-bottom: 5px;
  }
+
  .tags li {
    display: inline;
-   
  }
 }
 
@@ -94,5 +95,83 @@
 
 #show-org-map-holder {
   height: 400px;
+  margin-bottom: 10px;
 }
 
+
+.tabs {
+  li {
+    float: left;
+    background: #989898;
+    display: table-cell;
+    width: 1%;
+  }
+
+  li a {
+
+  }
+  li a.current {
+  }
+}
+
+.pagehead {
+  margin-bottom: 15px;
+
+  #org-tabs {
+    display: block;
+    border-color: #EAEAEA #EAEAEA #CACACA;
+    border-radius: 3px 3px 3px 3px;
+    border-style: solid;
+    margin: 10px 0 0;
+    height: 34px;
+    position: relative;
+    background: url('bar_background.png') repeat-x scroll 0 0 transparent;
+    border-width: 1px;
+    li {
+      list-style-type: none;
+      display: table-cell;
+      width: 1%;
+      margin: 0;
+      a {
+        font: 13.34px/1.4 helvetica,arial,freesans,clean,sans-serif;
+        font-weight: bold;
+        color: #888;
+        display: block;
+        border-right: 1px solid rgba(0, 0, 0, 0.04);
+        line-height: 35px;
+        height: 34px;
+        text-align: center;
+        text-decoration: none;
+        text-shadow: 0 1px 0 #FFFFFF;
+        &.selected {
+          color: #000;
+        }
+        &:hover {
+          background: url('hover.png') repeat-x scroll 0 0 transparent;
+          color: #4183C4;
+        }
+      }
+    }
+  }
+}
+
+#org-info {
+  #org-data {
+    float: left;
+    p {
+      background: none repeat scroll 0 0 #F5F5F5;
+      border-radius: 0 0 3px 3px;
+      border-top: 1px solid #DDDDDD;
+      padding: 17px 20px 18px 20px;
+    }
+  }
+  #map_canvas {
+    height: 275px;
+    width: auto;
+  }
+
+  #show-org-map-holder {
+    height: auto;
+    float: right;
+  }
+}

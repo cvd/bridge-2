@@ -1,35 +1,54 @@
+<div class="pagehead">
 
-<p>
-  <b>Name:</b>
-  <%= @organization.name %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%= @organization.address %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%= @organization.city %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%= @organization.state %>
-</p>
-
-<p>
-  <b>Zip:</b>
-  <%= @organization.zip %>
-</p>
-
-<% if @organization.latitude && @organization.longitude %>
-  <div id="show-org-map-holder">
-    <div data-lat="<%= @organization.latitude %>" 
-      data-lng="<%= @organization.longitude %>" 
-      id="map_canvas" class="organization-map"></div>
+  <div>
+    <h1><%= @organization.name %></h1>
   </div>
-<% end %>
-<%= link_to 'Edit', edit_organization_path(@organization) %> |
-<%= link_to 'Back', organizations_path %>
+
+  <div class="">
+    <%= link_to 'Edit', edit_organization_path(@organization) %> |
+    <%= link_to 'Back', organizations_path %>
+  </div>
+
+  <ul id="org-tabs">
+    <li><%= tab_link "Info", organization_path(@organization) %></li>
+    <li><%= tab_link "Services", "#services" %></li>
+    <li><%= tab_link "Research", "#research" %></li>
+    <li><%= tab_link "Volunteer", "#volunteer" %></li>
+    <li><%= tab_link "Comment", "#comment" %></li>
+  </ul>
+</div>
+
+<div id="org-info" class="clearfix">
+
+  <div id="org-data" class="span6">
+    <p>
+      <strong>Address:</strong>
+      <%= @organization.address %>
+    </p>
+
+    <p>
+      <strong>City:</strong>
+      <%= @organization.city %>
+    </p>
+
+    <p>
+      <strong>State:</strong>
+      <%= @organization.state %>
+    </p>
+
+    <p>
+      <strong>Zip:</strong>
+      <%= @organization.zip %>
+    </p>
+  </div>
+
+  <% if @organization.latitude && @organization.longitude %>
+    <div class="span8" id="show-org-map-holder">
+      <div data-lat="<%= @organization.latitude %>" 
+        data-lng="<%= @organization.longitude %>" 
+        id="map_canvas" class="organization-map"></div>
+    </div>
+  <% end %>
+
+
+</div>
