@@ -5,6 +5,7 @@ class Organization < ActiveRecord::Base
   has_many :tags, :through => :org_tags
 
   geocoded_by :street_address
+  before_save :strip_phone
 
   after_validation :geocode,
     :if => lambda { |obj| obj.address_changed? || obj.city_changed? || obj.state_changed? || obj. zip_changed? }
@@ -33,6 +34,10 @@ class Organization < ActiveRecord::Base
 
   def street_address
     [address, city, state, zip].join(" ")
+  end
+
+  def strip_phone
+    self.phone = self.phone.gsub /[-()\s]/, ''
   end
   
 end

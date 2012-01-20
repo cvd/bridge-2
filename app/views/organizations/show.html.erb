@@ -22,24 +22,9 @@
 
   <div id="org-data" class="span6">
     <p>
-      <strong>Address:</strong>
-      <%= @organization.address %>
+      <%= markdown @organization.description %>
     </p>
 
-    <p>
-      <strong>City:</strong>
-      <%= @organization.city %>
-    </p>
-
-    <p>
-      <strong>State:</strong>
-      <%= @organization.state %>
-    </p>
-
-    <p>
-      <strong>Zip:</strong>
-      <%= @organization.zip %>
-    </p>
   </div>
 
   <% if @organization.latitude && @organization.longitude %>
@@ -49,6 +34,19 @@
         id="map_canvas" class="organization-map"></div>
     </div>
   <% end %>
+  <div class="span8">
+    <p>
+      <strong>Address:</strong><br />
+      <%= @organization.address %> <br />
+      <%= @organization.city %>
+      <%= @organization.state %>
+      <%= @organization.zip %><br />
+
+      <% if @organization.phone? %>
+        P: <%= number_to_phone(@organization.phone, :area_code => true) %>
+      <% end %>
+    </p>
+  </div>
 
 
 </div>

@@ -13,7 +13,8 @@ gem 'formtastic', '~> 2.0.0'
 gem 'formtastic-bootstrap'
 gem "will_paginate"
 gem 'geocoder'
-gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails'
+gem 'bootstrap-sass-rails'
+gem 'redcarpet'
 
 # Gems used only for assets and not required
 # in production environments by default.

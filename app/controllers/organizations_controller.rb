@@ -6,7 +6,7 @@ class OrganizationsController < ApplicationController
     @organizations = Organization.all
 
     respond_to do |format|
-      format.html { render :index, :layout => "fluid" }
+      format.html { render :index }
       format.json { render json: @organizations }
     end
   end

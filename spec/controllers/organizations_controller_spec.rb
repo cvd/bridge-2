@@ -20,16 +20,12 @@ require 'spec_helper'
 
 describe OrganizationsController do
 
-  # This should return the minimal set of attributes required to create a valid
-  # Organization. As you add validations to Organization, be sure to
-  # update the return value of this method accordingly.
-  def valid_attributes
-    {}
-  end
+  let(:organization) { Factory(:organization) }
+  let(:valid_attributes){ Factory.attributes_for(:organization) }
 
   describe "GET index" do
     it "assigns all organizations as @organizations" do
-      organization = Organization.create! valid_attributes
+      organization = Factory(:organization)
       get :index
       assigns(:organizations).should eq([organization])
     end
@@ -37,7 +33,6 @@ describe OrganizationsController do
 
   describe "GET show" do
     it "assigns the requested organization as @organization" do
-      organization = Organization.create! valid_attributes
       get :show, :id => organization.id
       assigns(:organization).should eq(organization)
     end
@@ -52,7 +47,6 @@ describe OrganizationsController do
 
   describe "GET edit" do
     it "assigns the requested organization as @organization" do
-      organization = Organization.create! valid_attributes
       get :edit, :id => organization.id
       assigns(:organization).should eq(organization)
     end
