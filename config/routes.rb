@@ -1,4 +1,10 @@
 Bridge::Application.routes.draw do
+  resources :services
+
+  resources :volunteers
+
+  resources :reseearchers
+
   resources :articles
 
   resources :organizations do
@@ -6,11 +12,9 @@ Bridge::Application.routes.draw do
       get "map"
     end
 
-    member do
-      get "research"
-      get "volunteer"
-      get "services"
-    end
+    resources :researchers
+    resources :volunteers
+    resources :services
   end
 
   devise_for :users

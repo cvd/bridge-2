@@ -1,0 +1,21 @@
+<h1>Listing reseearchers</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reseearchers.each do |reseearcher| %>
+  <tr>
+    <td><%= link_to 'Show', reseearcher %></td>
+    <td><%= link_to 'Edit', edit_reseearcher_path(reseearcher) %></td>
+    <td><%= link_to 'Destroy', reseearcher, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Reseearcher', new_reseearcher_path %>

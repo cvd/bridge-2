@@ -1,5 +1,7 @@
 module ApplicationHelper
+
   def markdown(text)
+    return "" if text.blank?
     markdown_renderer.render(text).html_safe
   end
 

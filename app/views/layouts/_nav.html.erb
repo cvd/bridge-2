@@ -4,7 +4,7 @@
       <%= link_to "The BRIDGE Project", root_path, :class => "brand" %>
       <ul class="nav">
         <li class="active"><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Organizations", organizations_path %> </li>
+        <li><%= link_to "Organizations", map_organizations_path %> </li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
         <% if current_user.present? and current_user.admin? %>

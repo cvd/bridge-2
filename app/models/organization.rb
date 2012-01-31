@@ -3,6 +3,9 @@ class Organization < ActiveRecord::Base
 
   has_many :org_tags
   has_many :tags, :through => :org_tags
+  has_many :researchers
+  has_many :services
+  has_many :volunteers
 
   geocoded_by :street_address
   before_save :strip_phone

@@ -6,22 +6,22 @@ Syntax error: File to import not found or unreadable: twitter/bootstrap.
                 /Users/colin/projects/bridge/app/assets/stylesheets
                 /Users/colin/.rvm/gems/ruby-1.9.3-p0@bridge/gems/compass-0.11.5/frameworks/blueprint/stylesheets
                 /Users/colin/.rvm/gems/ruby-1.9.3-p0@bridge/gems/compass-0.11.5/frameworks/compass/stylesheets
-        on line 11 of /Users/colin/projects/bridge/app/assets/stylesheets/application.css.scss
+        on line 10 of /Users/colin/projects/bridge/app/assets/stylesheets/application.css.scss
 
-6:  *= require formtastic-bootstrap
-7: */
-8: 
-9: // @import "home";
-10: 
-11: @import "twitter/bootstrap";
-12: @import "organizations";
-13: 
-14: .clearfix:after {content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
-15: .clearfix {display:block;}
-16: 
+5:  *= require_self
+6: */
+7: 
+8: // @import "home";
+9: 
+10: @import "twitter/bootstrap";
+11: @import "organizations";
+12: 
+13: .clearfix:after {content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
+14: .clearfix {display:block;}
+15: 
 
 Backtrace:
-/Users/colin/projects/bridge/app/assets/stylesheets/application.css.scss:11
+/Users/colin/projects/bridge/app/assets/stylesheets/application.css.scss:10
 /Users/colin/.rvm/gems/ruby-1.9.3-p0@bridge/gems/sass-3.1.10/lib/sass/tree/import_node.rb:64:in `rescue in import'
 /Users/colin/.rvm/gems/ruby-1.9.3-p0@bridge/gems/sass-3.1.10/lib/sass/tree/import_node.rb:42:in `import'
 /Users/colin/.rvm/gems/ruby-1.9.3-p0@bridge/gems/sass-3.1.10/lib/sass/tree/import_node.rb:25:in `imported_file'
@@ -97,4 +97,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: twitter/bootstrap.\A               Load paths:\A                 Compass::SpriteImporter\A                 /Users/colin/projects/bridge/public/stylesheets/sass\A                 /Users/colin/projects/bridge/app/assets/stylesheets\A                 /Users/colin/.rvm/gems/ruby-1.9.3-p0@bridge/gems/compass-0.11.5/frameworks/blueprint/stylesheets\A                 /Users/colin/.rvm/gems/ruby-1.9.3-p0@bridge/gems/compass-0.11.5/frameworks/compass/stylesheets\A         on line 11 of /Users/colin/projects/bridge/app/assets/stylesheets/application.css.scss\A \A 6:  *= require formtastic-bootstrap\A 7: */\A 8: \A 9: // @import \"home\";\A 10: \A 11: @import \"twitter/bootstrap\";\A 12: @import \"organizations\";\A 13: \A 14: .clearfix:after {content:\"\0020\";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}\A 15: .clearfix {display:block;}\A 16: "; }
+  content: "Syntax error: File to import not found or unreadable: twitter/bootstrap.\A               Load paths:\A                 Compass::SpriteImporter\A                 /Users/colin/projects/bridge/public/stylesheets/sass\A                 /Users/colin/projects/bridge/app/assets/stylesheets\A                 /Users/colin/.rvm/gems/ruby-1.9.3-p0@bridge/gems/compass-0.11.5/frameworks/blueprint/stylesheets\A                 /Users/colin/.rvm/gems/ruby-1.9.3-p0@bridge/gems/compass-0.11.5/frameworks/compass/stylesheets\A         on line 10 of /Users/colin/projects/bridge/app/assets/stylesheets/application.css.scss\A \A 5:  *= require_self\A 6: */\A 7: \A 8: // @import \"home\";\A 9: \A 10: @import \"twitter/bootstrap\";\A 11: @import \"organizations\";\A 12: \A 13: .clearfix:after {content:\"\0020\";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}\A 14: .clearfix {display:block;}\A 15: "; }

@@ -11,9 +11,9 @@
 
   <ul id="org-tabs">
     <li><%= tab_link "Info", organization_path(@organization) %></li>
-    <li><%= tab_link "Services", "#services" %></li>
-    <li><%= tab_link "Research", "#research" %></li>
-    <li><%= tab_link "Volunteer", "#volunteer" %></li>
+    <li><%= tab_link "Services", organization_services_path(@organization) %></li>
+    <li><%= tab_link "Research", organization_researchers_path(@organization) %></li>
+    <li><%= tab_link "Volunteer", organization_volunteers_path(@organization) %></li>
     <li><%= tab_link "Comment", "#comment" %></li>
   </ul>
 </div>
