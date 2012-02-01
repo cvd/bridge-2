@@ -5,7 +5,7 @@ gem 'rails', '3.2.0'
 gem 'sqlite3'
 gem "jquery-rails"
 gem "compass"
-gem 'sunspot_rails', '~> 1.2.1'
+gem 'sunspot_rails'
 gem "devise"
 gem "decent_exposure"
 gem 'formtastic', '~> 2.0.0'

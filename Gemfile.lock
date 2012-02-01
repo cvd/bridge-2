@@ -115,7 +115,7 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     redcarpet (2.1.0)
-    rsolr (0.12.1)
+    rsolr (1.0.6)
       builder (>= 2.1.2)
     rspec (2.8.0)
       rspec-core (~> 2.8.0)
@@ -141,13 +141,13 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.5)
-    sunspot (1.2.1)
-      escape (= 0.0.4)
+    sunspot (1.3.0)
+      escape (~> 0.0.4)
       pr_geohash (~> 1.0)
-      rsolr (= 0.12.1)
-    sunspot_rails (1.2.1)
+      rsolr (~> 1.0.6)
+    sunspot_rails (1.3.0)
       nokogiri
-      sunspot (= 1.2.1)
+      sunspot (= 1.3.0)
     thor (0.14.6)
     tilt (1.3.3)
     treetop (1.4.10)
@@ -184,7 +184,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 3.2.0)
   sqlite3
-  sunspot_rails (~> 1.2.1)
+  sunspot_rails
   uglifier
   will_paginate
   wirble
