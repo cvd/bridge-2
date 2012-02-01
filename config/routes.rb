@@ -3,7 +3,7 @@ Bridge::Application.routes.draw do
 
   resources :volunteers
 
-  resources :reseearchers
+  resources :researchers
 
   resources :articles
 

@@ -1,2 +1,2 @@
-module ReseearchersHelper
+module ResearchersHelper
 end

@@ -1,4 +1,4 @@
-<h1>Listing reseearchers</h1>
+<h1>Listing researchers</h1>
 
 <table>
   <tr>
@@ -7,15 +7,15 @@
     <th></th>
   </tr>
 
-<% @reseearchers.each do |reseearcher| %>
+<% @researchers.each do |researcher| %>
   <tr>
-    <td><%= link_to 'Show', reseearcher %></td>
-    <td><%= link_to 'Edit', edit_reseearcher_path(reseearcher) %></td>
-    <td><%= link_to 'Destroy', reseearcher, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Show', researcher %></td>
+    <td><%= link_to 'Edit', edit_researcher_path(researcher) %></td>
+    <td><%= link_to 'Destroy', researcher, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Reseearcher', new_reseearcher_path %>
+<%= link_to 'New researcher', new_researcher_path %>
