@@ -1,5 +1,13 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "#update_password" do
+    it "updates the users password" do
+      @user = Factory(:user)
+      expect {
+        @user.update_password("new_password")
+      }.to change(@user, :encrypted_password)
+    end
+  end
 end
+

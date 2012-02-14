@@ -1,20 +1,21 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.0'
+gem 'rails', '3.2.1'
 
 gem 'sqlite3'
 gem "jquery-rails"
 gem "compass"
 gem 'sunspot_rails'
+gem 'sunspot_solr'
 gem "devise"
 gem "decent_exposure"
 gem 'formtastic', '~> 2.0.0'
 gem 'formtastic-bootstrap'
 gem "will_paginate"
 gem 'geocoder'
-gem 'bootstrap-sass-rails'
+gem 'bootstrap-sass-rails', '~>2.0'
 gem 'redcarpet'
-
+gem 'cancan'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -35,4 +36,7 @@ group :development, :test do
   # gem "sample_models"
   # gem "jasmine"
   # gem "jasmine-jquery"
+  gem "awesome_print"
 end
+
+gem 'progress_bar'

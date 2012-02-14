@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @service %> |
-<%= link_to 'Back', services_path %>
+<%= link_to 'Show', organization_service_path(organization, @service) %> |
+<%= link_to 'Back', organization_services_path(organization) %>

@@ -1,51 +1,29 @@
-<div class="pagehead">
-
-  <div>
-    <h1><%= @organization.name %></h1>
-  </div>
-
-  <div class="">
-    <%= link_to 'Edit', edit_organization_path(@organization) %> |
-    <%= link_to 'Back', organizations_path %>
-  </div>
-
-  <ul id="org-tabs">
-    <li><%= tab_link "Info", organization_path(@organization) %></li>
-    <li><%= tab_link "Services", organization_services_path(@organization) %></li>
-    <li><%= tab_link "Research", organization_researchers_path(@organization) %></li>
-    <li><%= tab_link "Volunteer", organization_volunteers_path(@organization) %></li>
-    <li><%= tab_link "Comment", "#comment" %></li>
-  </ul>
-</div>
+<%= render "show_head" %>
 
 <div id="org-info" class="clearfix">
 
-  <div id="org-data" class="span6">
-    <p>
+  <div id="org-data" class="span5 well">
+    <strong>Description: </strong><br/>
       <%= markdown @organization.description %>
-    </p>
-
   </div>
 
   <% if @organization.latitude && @organization.longitude %>
-    <div class="span8" id="show-org-map-holder">
+    <div class="span6" id="show-org-map-holder">
       <div data-lat="<%= @organization.latitude %>" 
         data-lng="<%= @organization.longitude %>" 
         id="map_canvas" class="organization-map"></div>
     </div>
   <% end %>
-  <div class="span8">
-    <p>
-      <strong>Address:</strong><br />
-      <%= @organization.address %> <br />
-      <%= @organization.city %>
-      <%= @organization.state %>
-      <%= @organization.zip %><br />
+  <div class="span5 well">
+    <strong>Address:</strong><br />
+    <%= @organization.address %> <br />
+    <%= @organization.city %>
+    <%= @organization.state %>
+    <%= @organization.zip %><br />
 
-      <% if @organization.phone? %>
-        P: <%= number_to_phone(@organization.phone, :area_code => true) %>
-      <% end %>
-    </p>
+    <% if @organization.phone? %>
+      P: <%= number_to_phone(@organization.phone, :area_code => true) %>
+    <% end %>
   </div>
 
 

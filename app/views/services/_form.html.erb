@@ -1,8 +1,34 @@
-<%= semantic_form_for @service do |f| %>
-  <%= f.inputs do %>
-  <% end %>
+<%= form_for [@organization, @service], :html => {:class => "form-horizontal"} do |f| %>
+  <fieldset>
+    <div class="control-group">
+      <%= f.label :title, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :title, :class => 'input-xlarge'  %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :description, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :description, :class => "input-xlarge", :rows => 7 %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :restrictions, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :restrictions, :class => 'input-xlarge' , :rows => 7 %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :internal_notes, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :internal_notes, :class => 'input-xlarge' , :rows => 7 %>
+      </div>
+    </div>
 
-  <%= f.buttons do %>
-    <%= f.commit_button %>
-  <% end %>
+  </fieldset>
+
+  <div class="form-actions">
+    <%= f.submit :class => "btn btn-primary" %>
+    or <%= link_to "Cancel", organization_services_path(organization) %>
+  </div>
 <% end %>

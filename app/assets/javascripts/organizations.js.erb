@@ -1,0 +1,15 @@
+
+$(document).ready(function(){
+  var orgs_path = '<%= Rails.application.routes.url_helpers.organizations_path(:format => :json) %>';
+  function getOrganizations() {
+    $.get(orgs_path, {}, showOrganizations);
+  }
+
+  function showOrganizations(orgs){
+    Bridge.map.addObjects(orgs);
+  }
+
+  if($("#main_map").length > 0){
+    getOrganizations();
+  }
+})

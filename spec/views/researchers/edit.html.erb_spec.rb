@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "researchers/edit" do
   before(:each) do
-    @researcher = assign(:researcher, stub_model(researcher))
+    @researcher = assign(:researcher, stub_model(:researcher))
   end
 
   it "renders the edit researcher form" do

@@ -1,21 +1,28 @@
-<h1>Listing services</h1>
+<%= render "organizations/show_head" %>
 
-<table>
+<h3>Services for <%= link_to organization.name, organization %></h3>
+
+<table class="table table-bordered table-striped">
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th style=" width: 80% ">Title</th>
+    <th>&nbsp;</th>
   </tr>
 
 <% @services.each do |service| %>
   <tr>
-    <td><%= link_to 'Show', service %></td>
-    <td><%= link_to 'Edit', edit_service_path(service) %></td>
-    <td><%= link_to 'Destroy', service, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to service.title, [organization, service] %></td>
+    <td>
+      <div class="btn-group">
+        <%= link_to 'Show', organization_service_path(organization, service), :class => "btn" %>
+        <%= link_to 'Edit', edit_organization_service_path(organization, service), :class => "btn btn-primary" %>
+        <%= link_to 'Destroy', organization_service_path(organization, service), confirm: 'Are you sure?', method: :delete, class: "btn btn-danger" %>
+      </div>
+    </td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Service', new_service_path %>
+<%= link_to 'New Service', new_organization_service_path(organization), :class => "btn btn-primary"%>
+<%= link_to "Back to #{organization}", organization_path(organization), :class => "btn btn-primary"%>

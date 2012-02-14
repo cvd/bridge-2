@@ -39,10 +39,10 @@
     <div class="container">
 
       <% if flash[:notice].present? %>
-        <div class="alert-message info"><%= flash[:notice] %></div>
+        <div class="alert info"><%= flash[:notice] %></div>
       <% end %>
       <% if flash[:error].present? %>
-        <div class="error alert-message"><%= flash[:alert] %></div>
+        <div class="error alert"><%= flash[:alert] %></div>
       <% end %>
 
       <%= yield %>

@@ -30,9 +30,8 @@
   max-width: 600px;
   font-size: 150%;
   color: #222;
-  height: 25px;
 }
-/* line 30, ../../app/assets/stylesheets/organizations.css.scss */
+/* line 29, ../../app/assets/stylesheets/organizations.css.scss */
 #search_bar form label {
   width: 270px;
   text-align: left;
@@ -41,42 +40,42 @@
   font-weight: bold;
 }
 
-/* line 40, ../../app/assets/stylesheets/organizations.css.scss */
+/* line 39, ../../app/assets/stylesheets/organizations.css.scss */
 #main_map {
   position: relative;
 }
 
-/* line 44, ../../app/assets/stylesheets/organizations.css.scss */
+/* line 43, ../../app/assets/stylesheets/organizations.css.scss */
 #panel .orgs {
   margin: 0;
 }
 
-/* line 48, ../../app/assets/stylesheets/organizations.css.scss */
+/* line 47, ../../app/assets/stylesheets/organizations.css.scss */
 #panel .orgs > li {
   border-bottom: 1px solid #E5E3DF;
   list-style-type: none;
 }
-/* line 52, ../../app/assets/stylesheets/organizations.css.scss */
+/* line 51, ../../app/assets/stylesheets/organizations.css.scss */
 #panel .orgs > li .title {
   padding: 5px 5px 0 5px;
   font-weight: bold;
   font-size: 1.2em;
 }
-/* line 58, ../../app/assets/stylesheets/organizations.css.scss */
+/* line 57, ../../app/assets/stylesheets/organizations.css.scss */
 #panel .orgs > li .body {
   padding: 5px;
 }
-/* line 62, ../../app/assets/stylesheets/organizations.css.scss */
+/* line 61, ../../app/assets/stylesheets/organizations.css.scss */
 #panel .orgs > li .tags ul {
   margin-left: 5px;
   padding-bottom: 5px;
 }
-/* line 67, ../../app/assets/stylesheets/organizations.css.scss */
+/* line 66, ../../app/assets/stylesheets/organizations.css.scss */
 #panel .orgs > li .tags li {
   display: inline;
 }
 
-/* line 74, ../../app/assets/stylesheets/organizations.css.scss */
+/* line 73, ../../app/assets/stylesheets/organizations.css.scss */
 #panel {
   overflow-y: auto;
   position: absolute;
@@ -86,7 +85,7 @@
   height: 400px;
 }
 
-/* line 83, ../../app/assets/stylesheets/organizations.css.scss */
+/* line 82, ../../app/assets/stylesheets/organizations.css.scss */
 #map {
   position: relative;
   left: 301px;
@@ -96,18 +95,18 @@
   border: 1px solid rgba(102, 102, 102, 0.25);
 }
 
-/* line 92, ../../app/assets/stylesheets/organizations.css.scss */
+/* line 91, ../../app/assets/stylesheets/organizations.css.scss */
 #map_canvas {
   height: 100%;
 }
 
-/* line 96, ../../app/assets/stylesheets/organizations.css.scss */
+/* line 95, ../../app/assets/stylesheets/organizations.css.scss */
 #show-org-map-holder {
   height: 400px;
   margin-bottom: 10px;
 }
 
-/* line 103, ../../app/assets/stylesheets/organizations.css.scss */
+/* line 102, ../../app/assets/stylesheets/organizations.css.scss */
 .tabs li {
   float: left;
   background: #989898;
@@ -115,63 +114,105 @@
   width: 1%;
 }
 
-/* line 117, ../../app/assets/stylesheets/organizations.css.scss */
+/* line 116, ../../app/assets/stylesheets/organizations.css.scss */
 .pagehead {
   margin-bottom: 15px;
 }
-/* line 120, ../../app/assets/stylesheets/organizations.css.scss */
+/* line 119, ../../app/assets/stylesheets/organizations.css.scss */
 .pagehead #org-tabs {
   display: block;
   border-color: #EAEAEA #EAEAEA #CACACA;
   border-radius: 3px 3px 3px 3px;
   border-style: solid;
+  border-width: 1px 1px 2px 1px;
   margin: 10px 0 0;
   height: 34px;
   position: relative;
   background: url("bar_background.png") repeat-x scroll 0 0 transparent;
-  border-width: 1px;
+  background: -moz-linear-gradient(#fafafa, #eaeaea);
+  background: -webkit-linear-gradient(#fafafa, #eaeaea);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa',endColorstr='#eaeaea')";
 }
-/* line 130, ../../app/assets/stylesheets/organizations.css.scss */
+/* line 132, ../../app/assets/stylesheets/organizations.css.scss */
 .pagehead #org-tabs li {
   list-style-type: none;
   display: table-cell;
   width: 1%;
   margin: 0;
 }
-/* line 135, ../../app/assets/stylesheets/organizations.css.scss */
+/* line 137, ../../app/assets/stylesheets/organizations.css.scss */
 .pagehead #org-tabs li a {
+  line-height: 35px;
   font: 13.34px/1.4 helvetica, arial, freesans, clean, sans-serif;
   font-weight: bold;
   color: #888;
   display: block;
   border-right: 1px solid rgba(0, 0, 0, 0.04);
-  line-height: 35px;
-  height: 34px;
   text-align: center;
   text-decoration: none;
   text-shadow: 0 1px 0 #FFFFFF;
+  border-bottom: 2px solid #DADADA;
 }
-/* line 146, ../../app/assets/stylesheets/organizations.css.scss */
+/* line 148, ../../app/assets/stylesheets/organizations.css.scss */
 .pagehead #org-tabs li a.selected {
   color: #000;
 }
-/* line 149, ../../app/assets/stylesheets/organizations.css.scss */
-.pagehead #org-tabs li a:hover {
-  background: url("hover.png") repeat-x scroll 0 0 transparent;
-  color: #4183C4;
+/* line 154, ../../app/assets/stylesheets/organizations.css.scss */
+.pagehead #org-tabs a span.label {
+  vertical-align: middle;
 }
 
-/* line 159, ../../app/assets/stylesheets/organizations.css.scss */
+/* line 160, ../../app/assets/stylesheets/organizations.css.scss */
+.pagehead > ul#org-tabs li a {
+  border-bottom: 2px solid #DADADA;
+  border-left: 1px solid rgba(255, 255, 255, 0.7);
+  border-right: 1px solid rgba(0, 0, 0, 0.04);
+  color: #777777;
+  display: block;
+  font-size: 12px;
+  line-height: 35px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 1px 0 white;
+}
+
+/* line 172, ../../app/assets/stylesheets/organizations.css.scss */
+.pagehead > ul#org-tabs li a:hover {
+  color: #4183C4;
+  background: -moz-linear-gradient(#fafbfd, #dce6ef);
+  background: -webkit-linear-gradient(#fafbfd, #dce6ef);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafbfd',endColorstr='#dce6ef')";
+}
+
+/* line 179, ../../app/assets/stylesheets/organizations.css.scss */
+.pagehead > ul#org-tabs li a.selected, .pagehead > ul#org-tabs li a.selected:hover {
+  background: -moz-linear-gradient(#fcfcfc, #ebebeb) repeat scroll 0 0 transparent;
+  border-bottom: 2px solid #D26911;
+  color: #000000;
+}
+
+/* line 184, ../../app/assets/stylesheets/organizations.css.scss */
+.pagehead > ul#org-tabs li:first-child a {
+  border-bottom-left-radius: 3px;
+  border-left: medium none;
+}
+
+/* line 190, ../../app/assets/stylesheets/organizations.css.scss */
 #org-info #org-data {
   float: left;
 }
-/* line 168, ../../app/assets/stylesheets/organizations.css.scss */
+/* line 199, ../../app/assets/stylesheets/organizations.css.scss */
 #org-info #map_canvas {
   height: 275px;
   width: auto;
 }
-/* line 173, ../../app/assets/stylesheets/organizations.css.scss */
+/* line 204, ../../app/assets/stylesheets/organizations.css.scss */
 #org-info #show-org-map-holder {
   height: auto;
+  float: right;
+}
+
+/* line 210, ../../app/assets/stylesheets/organizations.css.scss */
+#org-buttons {
   float: right;
 }

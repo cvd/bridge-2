@@ -1,5 +1,18 @@
-<p id="notice"><%= notice %></p>
+<%= render "organizations/show_head" %>
 
+<h2><%= @service.title %></h2>
+<div class="well">
+  <%= @service.description %>
+</div>
+<div class="well">
+  <strong>Restrictions:</strong>
+  <%= @service.restrictions %>
+</div>
 
-<%= link_to 'Edit', edit_service_path(@service) %> |
-<%= link_to 'Back', services_path %>
+<div class="well">
+  <strong>Internal Notes:</strong>
+  <%= @service.internal_notes %>
+</div>
+
+<%= link_to 'Edit', edit_organization_service_path(organization, @service) %> |
+<%= link_to 'Back', organization_services_path(organization) %>

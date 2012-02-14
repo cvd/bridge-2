@@ -1,0 +1,77 @@
+<div class="pagehead">
+
+  <div class="row">
+    <div class="span7">
+      <h1><%= @organization.name %></h1>
+    </div>
+
+    <div id="org-buttons" class="btn-toolbar">
+      <div class="btn-group">
+        <% if true %>
+          <%= link_to "#", :class => 'btn' do %>
+            <i class="icon-plus"></i>&nbsp; Follow
+          <% end %>
+        <% else %>
+          <%= link_to "#", :class => 'btn' do %>
+            <i class="icon-minus"></i>&nbsp; Unfollow
+          <% end %>
+        <% end %>
+      </div>
+
+      <% if true #TODO: Make dependent on lists %>
+        <div class="btn-group">
+          <a class="btn btn-small" href="#"><i class="icon-cog"></i>&nbsp;List</a>
+          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Make new list', edit_organization_path(@organization) %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Bob List', edit_organization_path(@organization) %></li>
+            <li><%= link_to 'Awesome List', edit_organization_path(@organization) %></li>
+            <li><%= link_to 'Super List', edit_organization_path(@organization) %></li>
+          </ul>
+        </div>
+      <% end %>
+
+      <% if can? :manage, @organization %>
+        <div class="btn-group">
+          <a class="btn btn-small" href="#"><i class="icon-cog"></i>&nbsp;Manage</a>
+          <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Edit', edit_organization_path(@organization) %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Add New Service', new_organization_service_path(@organization) %></li>
+            <li><%= link_to 'Add New Research', new_organization_researcher_path(@organization) %></li>
+            <li><%= link_to 'Add New Volunteer', new_organization_volunteer_path(@organization) %></li>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <ul id="org-tabs">
+    <li>
+      <%= tab_link "Info", organization_path(@organization) %>
+    </li>
+
+    <li>
+      <%= tab_link "Services <span class='label label-info'>#{@organization.services.count}</span>".html_safe, organization_services_path(@organization) %>
+    </li>
+
+    <li>
+      <%= tab_link "Research <span class='label label-info'>#{@organization.researchers.count}</span>".html_safe, organization_researchers_path(@organization) %>
+    </li>
+
+    <li>
+      <%= tab_link "Volunteer <span class='label label-info'>#{@organization.volunteers.count}</span>".html_safe, organization_volunteers_path(@organization) %>
+    </li>
+
+    <li>
+      <%= tab_link "Comment", "#comment" %>
+    </li>
+
+  </ul>
+</div>

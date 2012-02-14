@@ -1,6 +1,6 @@
 resize = -> 
   windowHeight = $(window).height()
-  topbarHeight = $('.topbar').height()
+  topbarHeight = $('.navbar').height()
   searchBarHeight = $('#search_bar').height()
   h = windowHeight - topbarHeight - searchBarHeight
   $('[data-autoheight]').height(h)

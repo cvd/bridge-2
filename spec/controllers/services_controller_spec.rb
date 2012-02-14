@@ -34,9 +34,14 @@ describe ServicesController do
     {}
   end
 
+  before do 
+    @org = Factory(:organization)
+    controller.stub(:organization) { @org }
+  end
+
   describe "GET index" do
     it "assigns all services as @services" do
-      service = Service.create! valid_attributes
+      service = @org.services.create! valid_attributes
       get :index, {}, valid_session
       assigns(:services).should eq([service])
     end

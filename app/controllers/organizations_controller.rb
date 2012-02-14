@@ -86,4 +86,17 @@ class OrganizationsController < ApplicationController
     @organizations = Organization.all
     render "map", :layout => "fluid"
   end
+
+  def search
+    @organizations = Organization.search do
+      fulltext params[:q]
+    end.results
+
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @organizations, :includes => [:tags] }
+    end
+
+  end
+
 end

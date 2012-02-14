@@ -1,0 +1,32 @@
+
+Login w/ Twitter/Facebook - Research
+
+Roles - 
+  Service Seeker (Client)
+  Non Profit 
+  Student
+  Faculty
+
+
+Org Fields
+  Info
+    Transportation - Break into Metro, Bus, Driving
+    TWITTER
+
+  Services
+    Tags
+  
+  Research
+    Tags
+  
+
+  Vonlunteer
+    Tags
+
+
+
+
+User Home Page
+  Show twitter updates from following orgs
+  Users your following
+  Lists

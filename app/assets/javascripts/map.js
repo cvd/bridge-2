@@ -3,6 +3,7 @@ $(function(){
     var map = new Bridge.Map($("#map_canvas"));
     map.render();
     map.addMarker(map.coords(), 0);
+    Bridge.map = map;
   }
 });
 
@@ -17,7 +18,7 @@ $(function(){
     render: function(){
       // var latlng = new google.maps.LatLng(-34.397, 150.644);
       var myOptions = {
-        zoom: 8,
+        zoom: 12,
         center: this.coords(),
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
@@ -32,10 +33,34 @@ $(function(){
     },
 
     addMarker: function(latLng, i){
+      
       return new google.maps.Marker({
         position: latLng,
         map: this.map,
-        icon: "http://maps.google.com/mapfiles/marker" + String.fromCharCode(i + 65) + ".png"
+        icon: this.icon(i)
+      });
+    },
+    icon: function(i){
+      if(typeof i === "undefined"){
+        return "http://maps.google.com/mapfiles/marker.png"
+      }
+      else {
+        return "http://maps.google.com/mapfiles/marker" + String.fromCharCode(i + 65) + ".png"
+      }
+    },
+
+    // Accepts an object that responds to #latitude & #longitude
+    addObject: function(located_object){
+      var ll = new google.maps.LatLng(located_object.latitude, located_object.longitude);
+      this.addMarker(ll);
+    },
+
+    addObjects: function(objects){
+      var that = this;
+      _.each(objects, function(obj){
+        if(obj.latitude && obj.longitude){
+          that.addObject(obj);
+        }
       });
     }
   };

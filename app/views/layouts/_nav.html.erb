@@ -1,5 +1,5 @@
-<div class="topbar">
-  <div class="topbar-inner">
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
     <div class="container-fluid">
       <%= link_to "The BRIDGE Project", root_path, :class => "brand" %>
       <ul class="nav">
@@ -25,9 +25,11 @@
         </div>
       <% else %>
         <%= form_for(User.new, :url => new_user_session_path, :html => {:class => "pull-right"} ) do |f| %>
-          <%= f.text_field :email, :class => "input-small", :placeholder => "Username" %>
-          <%= f.password_field :password, :class => "input-small", :placeholder => "Password" %>
-          <button class="btn" type="submit">Sign in</button>
+          <div class="nav-login">
+            <%= f.text_field :email, :class => "input-small", :placeholder => "Username" %>
+            <%= f.password_field :password, :class => "input-small", :placeholder => "Password" %>
+            <button class="btn" type="submit">Sign in</button>
+          </div>
         <% end %>
       <% end %>
     </div>

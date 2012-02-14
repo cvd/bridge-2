@@ -1,5 +1,34 @@
-<p id="notice"><%= notice %></p>
 
+<%= render "organizations/show_head" %>
 
-<%= link_to 'Edit', edit_reseearcher_path(@reseearcher) %> |
-<%= link_to 'Back', reseearchers_path %>
+<h2><%= @researcher.title %></h2>
+
+<% if @researcher.description? %>
+  <div class="well">
+    <%= @researcher.description %>
+  </div>
+<% end %>
+
+<% if @researcher.hours_requested? %>
+  <div class="well">
+    <strong>Hours Requested:</strong>
+    <%= @researcher.hours_requested %>
+  </div>
+<% end %>
+
+<% if @researcher.requirements? %>
+  <div class="well">
+    <strong>Requirements:</strong>
+    <%= @researcher.requirements %>
+  </div>
+<% end %>
+
+<% if @researcher.internal_notes? %>
+  <div class="well">
+    <strong>Internal Notes</strong>
+    <%= @researcher.internal_notes %>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_organization_researcher_path(organization, @researcher) %> |
+<%= link_to 'Back', organization_researchers_path %>

@@ -1,15 +1,13 @@
 Bridge::Application.routes.draw do
-  resources :services
 
-  resources :volunteers
-
-  resources :researchers
+  get "u" => "user#home", :as => :user_home
 
   resources :articles
 
   resources :organizations do
     collection do
       get "map"
+      get "search"
     end
 
     resources :researchers

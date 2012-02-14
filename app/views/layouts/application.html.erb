@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <%= title_helper %>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -32,7 +32,8 @@
         text-align: center; /* center align it with the container */
       }
       .container {
-        width: 820px; /* downsize our container to make the content feel a bit tighter and more cohesive. 
+        /*    width: 820px; */
+        /* downsize our container to make the content feel a bit tighter and more cohesive. 
         NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
       }
 
@@ -82,15 +83,6 @@
     <%= render "layouts/nav" %>
 
     <div class="container">
-      <% if flash[:notice].present? %>
-        <div class="alert-message notice"><%= flash[:notice] %></div>
-      <% end %>
-      <% if flash[:error].present? %>
-        <div class="error alert-message"><%= flash[:alert] %></div>
-      <% end %>
-      <% if flash[:success].present? %>
-        <div class="alert-message success"><%= flash[:sucess] %></div>
-      <% end %>
 
       <% if content_for :tag_line %>
         <%= yield :tag_line %>
@@ -102,6 +94,17 @@
 
       <div class="content">
         <div class="middle_content">
+
+          <% if flash[:notice].present? %>
+            <div class="alert notice"><%= flash[:notice] %></div>
+          <% end %>
+          <% if flash[:error].present? %>
+            <div class="error alert"><%= flash[:alert] %></div>
+          <% end %>
+          <% if flash[:success].present? %>
+            <div class="alert success"><%= flash[:sucess] %></div>
+          <% end %>
+
           <%= yield %>
         </div>
 

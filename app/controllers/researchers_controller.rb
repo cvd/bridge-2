@@ -1,8 +1,8 @@
-class researchersController < ApplicationController
+class ResearchersController < ApplicationController
   # GET /researchers
   # GET /researchers.json
   def index
-    @researchers = researcher.all
+    @researchers = organization.researchers.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class researchersController < ApplicationController
   # GET /researchers/1
   # GET /researchers/1.json
   def show
-    @researcher = researcher.find(params[:id])
+    @researcher = organization.researchers.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +24,7 @@ class researchersController < ApplicationController
   # GET /researchers/new
   # GET /researchers/new.json
   def new
-    @researcher = researcher.new
+    @researcher = organization.researchers.build(params[:researcher])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,17 +34,17 @@ class researchersController < ApplicationController
 
   # GET /researchers/1/edit
   def edit
-    @researcher = researcher.find(params[:id])
+    @researcher = Researcher.find(params[:id])
   end
 
   # POST /researchers
   # POST /researchers.json
   def create
-    @researcher = researcher.new(params[:researcher])
+    @researcher = organization.researchers.build(params[:researcher])
 
     respond_to do |format|
       if @researcher.save
-        format.html { redirect_to @researcher, notice: 'researcher was successfully created.' }
+        format.html { redirect_to [organization, @researcher], notice: 'researcher was successfully created.' }
         format.json { render json: @researcher, status: :created, location: @researcher }
       else
         format.html { render action: "new" }
@@ -56,7 +56,7 @@ class researchersController < ApplicationController
   # PUT /researchers/1
   # PUT /researchers/1.json
   def update
-    @researcher = researcher.find(params[:id])
+    @researcher = organization.researchers.find(params[:id])
 
     respond_to do |format|
       if @researcher.update_attributes(params[:researcher])
@@ -72,7 +72,7 @@ class researchersController < ApplicationController
   # DELETE /researchers/1
   # DELETE /researchers/1.json
   def destroy
-    @researcher = researcher.find(params[:id])
+    @researcher = organization.researchers.find(params[:id])
     @researcher.destroy
 
     respond_to do |format|
@@ -80,4 +80,11 @@ class researchersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  protected
+  def organization
+    @organization ||= Organization.find(params[:organization_id])
+  end
+
+  helper_method :organization
 end

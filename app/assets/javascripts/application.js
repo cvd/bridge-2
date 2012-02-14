@@ -7,4 +7,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore
+//= require twitter/bootstrap/dropdown
 //= require_tree .

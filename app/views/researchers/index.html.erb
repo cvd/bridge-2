@@ -1,21 +1,35 @@
-<h1>Listing researchers</h1>
+<%= render "organizations/show_head" %>
 
-<table>
+<h3>Research Opportunities for <em><%= @organization %></em></h3>
+
+<table class="table table-striped table-bordered">
   <tr>
-    <th></th>
-    <th></th>
+    <th style="width: 80%;">Title</th>
     <th></th>
   </tr>
 
 <% @researchers.each do |researcher| %>
   <tr>
-    <td><%= link_to 'Show', researcher %></td>
-    <td><%= link_to 'Edit', edit_researcher_path(researcher) %></td>
-    <td><%= link_to 'Destroy', researcher, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to researcher.title, organization_researcher_path(organization, researcher) %></td>
+    <td>
+      <div class="btn-group">
+        <%= link_to 'Show', organization_researcher_path(organization, researcher),
+          :class => "btn" %>
+
+        <%= link_to 'Edit', edit_organization_researcher_path(organization, researcher),
+          :class => "btn btn-primary" %>
+
+        <%= link_to 'Destroy',
+          organization_researcher_path(organization, researcher),
+          confirm: 'Are you sure?',
+          method: :delete,
+          class: "btn btn-danger" %>
+      </div>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New researcher', new_researcher_path %>
+<%= link_to 'Add Research Opportunity', new_organization_researcher_path, :class => "btn btn-primary"%>
+<%= link_to "Back to #{organization}", organization_path(organization), :class => "btn btn-primary"%>

@@ -1,40 +1,42 @@
 GEM
   remote: http://rubygems.org/
   specs:
-    actionmailer (3.2.0)
-      actionpack (= 3.2.0)
+    actionmailer (3.2.1)
+      actionpack (= 3.2.1)
       mail (~> 2.4.0)
-    actionpack (3.2.0)
-      activemodel (= 3.2.0)
-      activesupport (= 3.2.0)
+    actionpack (3.2.1)
+      activemodel (= 3.2.1)
+      activesupport (= 3.2.1)
       builder (~> 3.0.0)
       erubis (~> 2.7.0)
-      journey (~> 1.0.0)
+      journey (~> 1.0.1)
       rack (~> 1.4.0)
       rack-cache (~> 1.1)
       rack-test (~> 0.6.1)
       sprockets (~> 2.1.2)
-    activemodel (3.2.0)
-      activesupport (= 3.2.0)
+    activemodel (3.2.1)
+      activesupport (= 3.2.1)
       builder (~> 3.0.0)
-    activerecord (3.2.0)
-      activemodel (= 3.2.0)
-      activesupport (= 3.2.0)
+    activerecord (3.2.1)
+      activemodel (= 3.2.1)
+      activesupport (= 3.2.1)
       arel (~> 3.0.0)
       tzinfo (~> 0.3.29)
-    activeresource (3.2.0)
-      activemodel (= 3.2.0)
-      activesupport (= 3.2.0)
-    activesupport (3.2.0)
+    activeresource (3.2.1)
+      activemodel (= 3.2.1)
+      activesupport (= 3.2.1)
+    activesupport (3.2.1)
       i18n (~> 0.6)
       multi_json (~> 1.0)
     annotate (2.4.0)
     arel (3.0.0)
+    awesome_print (1.0.2)
     bcrypt-ruby (3.0.1)
-    bootstrap-sass-rails (1.4.0.3)
+    bootstrap-sass-rails (2.0.0.3)
       rails (~> 3.1)
       sass-rails (~> 3.1)
     builder (3.0.0)
+    cancan (1.6.7)
     chunky_png (1.2.5)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -48,7 +50,7 @@ GEM
       fssm (>= 0.2.7)
       sass (~> 3.1)
     decent_exposure (1.0.1)
-    devise (2.0.0)
+    devise (2.0.1)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
       railties (~> 3.1)
@@ -58,11 +60,12 @@ GEM
     escape (0.0.4)
     execjs (1.3.0)
       multi_json (~> 1.0)
-    factory_girl (2.5.0)
+    factory_girl (2.5.1)
       activesupport
     factory_girl_rails (1.6.0)
       factory_girl (~> 2.5.0)
       railties (>= 3.0.0)
+    fattr (2.2.1)
     formtastic (2.0.2)
       rails (~> 3.0)
     formtastic-bootstrap (1.1.1)
@@ -70,13 +73,14 @@ GEM
       rails (~> 3.1)
     fssm (0.2.8.1)
     geocoder (1.1.0)
+    highline (1.6.11)
     hike (1.2.1)
     i18n (0.6.0)
     interactive_editor (0.0.10)
       spoon (>= 0.0.1)
     journey (1.0.1)
-    jquery-rails (2.0.0)
-      railties (>= 3.2.0.beta, < 5.0)
+    jquery-rails (1.0.19)
+      railties (~> 3.0)
       thor (~> 0.14)
     json (1.6.5)
     mail (2.4.1)
@@ -86,9 +90,14 @@ GEM
     mime-types (1.17.2)
     multi_json (1.0.4)
     nokogiri (1.5.0)
+    options (2.3.0)
+      fattr
     orm_adapter (0.0.6)
     polyglot (0.3.3)
     pr_geohash (1.0.0)
+    progress_bar (0.4.0)
+      highline (~> 1.6.1)
+      options (~> 2.3.0)
     rack (1.4.1)
     rack-cache (1.1)
       rack (>= 0.4)
@@ -96,17 +105,17 @@ GEM
       rack
     rack-test (0.6.1)
       rack (>= 1.0)
-    rails (3.2.0)
-      actionmailer (= 3.2.0)
-      actionpack (= 3.2.0)
-      activerecord (= 3.2.0)
-      activeresource (= 3.2.0)
-      activesupport (= 3.2.0)
+    rails (3.2.1)
+      actionmailer (= 3.2.1)
+      actionpack (= 3.2.1)
+      activerecord (= 3.2.1)
+      activeresource (= 3.2.1)
+      activesupport (= 3.2.1)
       bundler (~> 1.0)
-      railties (= 3.2.0)
-    railties (3.2.0)
-      actionpack (= 3.2.0)
-      activesupport (= 3.2.0)
+      railties (= 3.2.1)
+    railties (3.2.1)
+      actionpack (= 3.2.1)
+      activesupport (= 3.2.1)
       rack-ssl (~> 1.3.2)
       rake (>= 0.8.7)
       rdoc (~> 3.4)
@@ -130,7 +139,7 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.8.0)
-    sass (3.1.12)
+    sass (3.1.15)
     sass-rails (3.2.4)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -148,6 +157,8 @@ GEM
     sunspot_rails (1.3.0)
       nokogiri
       sunspot (= 1.3.0)
+    sunspot_solr (1.3.0)
+      escape (~> 0.0.4)
     thor (0.14.6)
     tilt (1.3.3)
     treetop (1.4.10)
@@ -159,7 +170,7 @@ GEM
       multi_json (>= 1.0.2)
     warden (1.1.0)
       rack (>= 1.0)
-    will_paginate (3.0.2)
+    will_paginate (3.0.3)
     wirble (0.1.3)
 
 PLATFORMS
@@ -167,7 +178,9 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
-  bootstrap-sass-rails
+  awesome_print
+  bootstrap-sass-rails (~> 2.0)
+  cancan
   coffee-rails (~> 3.2.0)
   compass
   decent_exposure
@@ -178,13 +191,15 @@ DEPENDENCIES
   geocoder
   interactive_editor
   jquery-rails
-  rails (= 3.2.0)
+  progress_bar
+  rails (= 3.2.1)
   redcarpet
   rspec
   rspec-rails
   sass-rails (~> 3.2.0)
   sqlite3
   sunspot_rails
+  sunspot_solr
   uglifier
   will_paginate
   wirble

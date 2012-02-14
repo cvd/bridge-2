@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def title_helper
+    content_tag(:title, "The BRIDGE Project DC")
+  end
+
   def markdown(text)
     return "" if text.blank?
     markdown_renderer.render(text).html_safe

@@ -9,6 +9,7 @@ class CreateResearchers < ActiveRecord::Migration
       t.text :description
       t.text :restrictions
       t.text :internal_notes
+      t.integer :organization_id
 
 
       t.timestamps

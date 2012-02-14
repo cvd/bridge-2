@@ -25,7 +25,6 @@
       max-width: 600px;
       font-size: 150%;
       color: #222;
-      height: 25px;
     }
     label {
       width: 270px;;
@@ -122,37 +121,69 @@
     border-color: #EAEAEA #EAEAEA #CACACA;
     border-radius: 3px 3px 3px 3px;
     border-style: solid;
+    border-width: 1px 1px 2px 1px;
     margin: 10px 0 0;
     height: 34px;
     position: relative;
     background: url('bar_background.png') repeat-x scroll 0 0 transparent;
-    border-width: 1px;
+    background: -moz-linear-gradient(#FAFAFA,#EAEAEA);
+    background: -webkit-linear-gradient(#FAFAFA,#EAEAEA);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa',endColorstr='#eaeaea')";
     li {
       list-style-type: none;
       display: table-cell;
       width: 1%;
       margin: 0;
       a {
+        line-height: 35px;
         font: 13.34px/1.4 helvetica,arial,freesans,clean,sans-serif;
         font-weight: bold;
         color: #888;
         display: block;
         border-right: 1px solid rgba(0, 0, 0, 0.04);
-        line-height: 35px;
-        height: 34px;
         text-align: center;
         text-decoration: none;
         text-shadow: 0 1px 0 #FFFFFF;
+        border-bottom: 2px solid #DADADA;
         &.selected {
           color: #000;
         }
-        &:hover {
-          background: url('hover.png') repeat-x scroll 0 0 transparent;
-          color: #4183C4;
-        }
       }
     }
+
+    a span.label {
+      vertical-align: middle;
+    }
   }
+}
+
+.pagehead > ul#org-tabs li a {
+  border-bottom: 2px solid #DADADA;
+  border-left: 1px solid rgba(255, 255, 255, 0.7);
+  border-right: 1px solid rgba(0, 0, 0, 0.04);
+  color: #777777;
+  display: block;
+  font-size: 12px;
+  line-height: 35px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 1px 0 white;
+}
+.pagehead > ul#org-tabs li a:hover {
+  color: #4183C4;
+  background: -moz-linear-gradient(#FAFBFD, #DCE6EF);
+  background: -webkit-linear-gradient(#FAFBFD,#DCE6EF);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafbfd',endColorstr='#dce6ef')";
+}
+
+.pagehead > ul#org-tabs li a.selected, .pagehead > ul#org-tabs li a.selected:hover {
+    background: -moz-linear-gradient(#FCFCFC, #EBEBEB) repeat scroll 0 0 transparent;
+    border-bottom: 2px solid #D26911;
+    color: #000000;
+}
+.pagehead > ul#org-tabs li:first-child a {
+    border-bottom-left-radius: 3px;
+    border-left: medium none;
 }
 
 #org-info {
@@ -174,4 +205,8 @@
     height: auto;
     float: right;
   }
+}
+
+#org-buttons {
+  float: right;
 }
