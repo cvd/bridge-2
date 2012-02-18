@@ -67,7 +67,7 @@ Backtrace:
 /Users/colin/.rvm/gems/ruby-1.9.3-p0@bridge/gems/activerecord-3.2.1/lib/active_record/query_cache.rb:64:in `call'
 /Users/colin/.rvm/gems/ruby-1.9.3-p0@bridge/gems/activerecord-3.2.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:443:in `call'
 /Users/colin/.rvm/gems/ruby-1.9.3-p0@bridge/gems/actionpack-3.2.1/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
-/Users/colin/.rvm/gems/ruby-1.9.3-p0@bridge/gems/activesupport-3.2.1/lib/active_support/callbacks.rb:405:in `_run__3156300278313722214__call__777273651039641743__callbacks'
+/Users/colin/.rvm/gems/ruby-1.9.3-p0@bridge/gems/activesupport-3.2.1/lib/active_support/callbacks.rb:405:in `_run__740022660787973035__call__4241000338549536400__callbacks'
 /Users/colin/.rvm/gems/ruby-1.9.3-p0@bridge/gems/activesupport-3.2.1/lib/active_support/callbacks.rb:405:in `__run_callback'
 /Users/colin/.rvm/gems/ruby-1.9.3-p0@bridge/gems/activesupport-3.2.1/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
 /Users/colin/.rvm/gems/ruby-1.9.3-p0@bridge/gems/activesupport-3.2.1/lib/active_support/callbacks.rb:81:in `run_callbacks'

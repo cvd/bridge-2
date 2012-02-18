@@ -10,6 +10,10 @@ Bridge::Application.routes.draw do
       get "search"
     end
 
+    member do
+      get "follow"
+    end
+
     resources :researchers
     resources :volunteers
     resources :services

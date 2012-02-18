@@ -99,4 +99,14 @@ class OrganizationsController < ApplicationController
 
   end
 
+  def follow
+    @organization = Organization.find(params[:id])
+    success = current_user.follow(@organization)
+    respond_to do |format|
+      format.html { redirect_to :organization, notice: "Awesome, You followed #{@organization}" }
+      format.json { render json: {success: success} }
+    end
+
+  end
+
 end

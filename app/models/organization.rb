@@ -6,6 +6,8 @@ class Organization < ActiveRecord::Base
   has_many :researchers, :dependent => :destroy
   has_many :services, :dependent => :destroy
   has_many :volunteers, :dependent => :destroy
+  has_many :followers, :as => :followable, :class_name => "Follow"
+  has_many :follows
 
   searchable do
     text :name, :boost => 2.0, :stored => true
