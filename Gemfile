@@ -11,6 +11,7 @@ gem "devise"
 gem "decent_exposure"
 #gem 'formtastic', '~> 2.0.0'
 #gem 'formtastic-bootstrap'
+gem 'simple_form'
 gem "will_paginate"
 gem 'geocoder'
 gem 'bootstrap-sass-rails', '~>2.0'

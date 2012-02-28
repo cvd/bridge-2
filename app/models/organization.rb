@@ -26,7 +26,7 @@ class Organization < ActiveRecord::Base
   end
 
   def as_json(options={})
-    super(:include => :tags)
+    super(options.merge(:include => :tags))
   end
 
   # Possibly will be slow inline... probably need to set some more specifics grained settings
