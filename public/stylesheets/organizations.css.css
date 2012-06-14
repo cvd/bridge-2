@@ -216,3 +216,15 @@
 #org-buttons {
   float: right;
 }
+
+/* line 213, ../../app/assets/stylesheets/organizations.css.scss */
+#org-info .right-side {
+  margin-left: 0;
+  padding-left: 19px;
+  border-left: 1px solid #eee;
+}
+
+/* line 219, ../../app/assets/stylesheets/organizations.css.scss */
+#joinModal form {
+  margin-bottom: 0;
+}

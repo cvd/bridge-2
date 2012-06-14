@@ -2,27 +2,37 @@
 
 <div id="org-info" class="clearfix">
 
-  <div id="org-data" class="span5 well">
+  <div id="org-data" class="span4 well">
     <strong>Description: </strong><br/>
       <%= markdown @organization.description %>
   </div>
 
-  <% if @organization.latitude && @organization.longitude %>
-    <div class="span6" id="show-org-map-holder">
-      <div data-lat="<%= @organization.latitude %>" 
-        data-lng="<%= @organization.longitude %>" 
-        id="map_canvas" class="organization-map"></div>
-    </div>
-  <% end %>
-  <div class="span5 well">
-    <strong>Address:</strong><br />
-    <%= @organization.address %> <br />
-    <%= @organization.city %>
-    <%= @organization.state %>
-    <%= @organization.zip %><br />
+  <div class="span4 right-side pull-right">
+    <% if @organization.latitude && @organization.longitude %>
+      <div class="span4" id="show-org-map-holder">
+        <div data-lat="<%= @organization.latitude %>" 
+          data-lng="<%= @organization.longitude %>" 
+          id="map_canvas" class="organization-map"></div>
+      </div>
+    <% end %>
 
-    <% if @organization.phone? %>
-      P: <%= number_to_phone(@organization.phone, :area_code => true) %>
+    <div>
+      <strong>Address:</strong><br />
+      <%= @organization.address %> <br />
+      <%= @organization.city %>
+      <%= @organization.state %>
+      <%= @organization.zip %><br />
+
+      <% if @organization.phone? %>
+        P: <%= number_to_phone(@organization.phone, :area_code => true) %>
+      <% end %>
+    </div>
+
+    <% if @organization.twitter? %>
+      <div class="twitter">
+        Twitter: &nbsp;
+        <%= link_to "@#{@organization.twitter}", "http://www.twitter.com/#{@organization.twitter}", :target => "_blank" %>
+      </div>
     <% end %>
   </div>
 

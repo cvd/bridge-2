@@ -8,5 +8,12 @@
 //= require jquery_ujs
 //= require underscore
 //= require twitter/bootstrap/dropdown
+//= require twitter/bootstrap/tooltip
+//= require twitter/bootstrap/modal
 //= require mustache
 //= require_tree .
+//
+
+$(document).ready(function(){
+  $("a[rel=tooltip]").tooltip();
+})

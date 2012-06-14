@@ -12,4 +12,10 @@ $(document).ready(function(){
   if($("#main_map").length > 0){
     getOrganizations();
   }
+  var orgButtons = $("#org-buttons");
+  if(orgButtons.length > 0){
+    orgButtons.on('click', '[data-action=join]', function(){
+      
+    })
+  }
 })

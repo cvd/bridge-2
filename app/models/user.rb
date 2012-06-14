@@ -7,6 +7,13 @@ class User < ActiveRecord::Base
   has_many :followers, :as => :followable, :class_name => "Follow"
 
   has_many :follows
+  has_many :organizations_followed, :class_name => "Organization",
+    :through => :follows,
+    :conditions => "follows.followable_type = 'Organization'",
+    :foreign_key => :followable_id,
+    :source => :organization
+  has_many :organization_users
+  has_many :organizations, :through => :organization_users
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name
@@ -31,8 +38,12 @@ class User < ActiveRecord::Base
     sub.persisted?
   end
 
-  def following?(followable)
-    
+  def following_org?(org)
+    organizations_followed.include? org
+  end
+
+  def joined?(org)
+    organizations.include? org
   end
   
 end

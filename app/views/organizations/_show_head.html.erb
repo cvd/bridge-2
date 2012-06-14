@@ -6,14 +6,47 @@
     </div>
 
     <div id="org-buttons" class="btn-toolbar">
+      <% unless current_user.joined?(@organization) %>
+        <div class="btn-group">
+          <a data-action="join"  data-toggle="modal" href="#joinModal" class='btn'>Join</a>
+        </div>
+
+        <div class="modal hide" id="joinModal">
+          <%= simple_form_for OrganizationUser.new(:organization => @organization, :user => current_user) do |f| %>
+            <div class="modal-header">
+              <a class="close" data-dismiss="modal">×</a>
+              <h3>Join <%= @organization %></h3>
+            </div>
+            <div class="modal-body">
+              <p>Do you work or volunteer for <%= @organization %>?</p>
+              <p>Link your account with this organization to be able to
+              manage it!</p>
+              <%= f.input :organization_id, :as => :hidden %>
+              <%= f.input :user_id, :as => :hidden %>
+              <%= f.input :role, :as => :select, :collection => ["Employee", "Volunteer"], :label => "Select your Role:" %>
+            </div>
+            <div class="modal-footer">
+              <a href="#" data-dismiss="modal" class="btn">Close</a>
+              <%= f.button :submit, :value => "Save Changes", :class => "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="btn-group">
+          <a href="#" class='btn ' data-placement="bottom" rel="tooltip" title="You are an admin of this organization">
+            <i class="icon-lock"></i>&nbsp;Admin
+          </a>
+        </div>
+      <% end %>
+
       <div class="btn-group">
-        <% if true %>
+        <% if following?(@organization) %>
+          <div class='btn btn-success'>
+            Following
+          </div>
+        <% else %>
           <%= link_to follow_organization_path(@organization), :class => 'btn' do %>
             <i class="icon-plus"></i>&nbsp; Follow
-          <% end %>
-        <% else %>
-          <%= link_to "#", :class => 'btn' do %>
-            <i class="icon-minus"></i>&nbsp; Unfollow
           <% end %>
         <% end %>
       </div>

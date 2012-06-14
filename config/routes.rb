@@ -18,6 +18,7 @@ Bridge::Application.routes.draw do
     resources :volunteers
     resources :services
   end
+  resources :organization_users
 
   devise_for :users
 

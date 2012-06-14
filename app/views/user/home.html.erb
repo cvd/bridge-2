@@ -2,27 +2,49 @@
 
 
 <div class="well">
-    <div class="btn-group">
-      <a class="btn" href="#">Action</a>
-      <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-        <span class="caret"></span>
-      </a>
-      <ul class="dropdown-menu">
-        <a href="#a">Do A</a>
-        <a href="#a">Do B</a>
-        <a href="#a">Do C</a>
-        <a href="#a">Do D</a>
-      </ul>
-    </div>
+  <div class="btn-group">
+    <a class="btn" href="#">Action</a>
+    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+      <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <a href="#a">Do A</a>
+      <a href="#a">Do B</a>
+      <a href="#a">Do C</a>
+      <a href="#a">Do D</a>
+    </ul>
+  </div>
 </div>
+
 <div class="row">
-  <div class="well span5">Display Followed Organizations</div>
+  <div class="well span5">
+    <h3>Organization You Are With</h3>
+    <ul>
+      <% current_user.organizations.each do |org| %>
+        <li><%= link_to org, org %></li>
+      <% end %>
+    </ul>
+  </div>
   <div class="span1">&nbsp;</div>
-  <div class="well span5">Display Updates from Followed Organizations</div>
+
+  <div class="well span5">
+    <h3>Organizations You Follow</h3>
+    <ul>
+      <% current_user.organizations_followed.each do |org| %>
+        <li><%= link_to org, org %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>
 
 <div class="row">
   <div class="well span5">Display Users following</div>
   <div class="span1">&nbsp;</div>
-  <div class="well span5">Display Followed Organizations</div>
+  <div class="well span5">Display Followed Organizations Updates</div>
+</div>
+
+<div class="row">
+  <div class="well span5">Your Lists</div>
+  <div class="span1">&nbsp;</div>
+  <div class="well span5">Something Else</div>
 </div>
